@@ -1,0 +1,60 @@
+{% extends 'master.html'%}
+ 
+ {% block content %}   
+
+ <h2 class="text-center mt-5 text-primary">Update Person Details</h2>
+<div class="container border mt-5 mx-auto w-75 p-5 rounded">
+<form class="row g-4 needs-validation " method="POST" action="updatepageprocess/" novalidate>
+  {% csrf_token %}
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">Name</label>
+      <input type="text" class="form-control" name="name" id="name" value="{{p.name}}" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Date of Birth</label>
+      <input type="date" class="form-control" name="dob" id="dob" value="{{p.dob}}" required>
+      </div>
+    
+    <div class="col-md-4">
+      <label for="validationCustomUsername" class="form-label">Employee Id</label>
+      <div class="input-group has-validation">
+        <input type="text" class="form-control" name="eid" id="eid" value="{{p.eid}}" required>
+        <div class="invalid-feedback">
+          Please choose a eid.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <label for="validationCustom03" class="form-label">Address</label>
+      <textarea name="address" class="form-control" id="address" cols="30" rows="10"  value="" required>{{p.address}}</textarea>
+      <div class="invalid-feedback">
+        Please provide a valid Address.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">Email ID</label>
+      <input type="email" class="form-control" name="email" id="email"  value="{{p.email}}" required>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">Mobile Number</label>
+      <input type="text" class="form-control" name="mob" id="mob"  value="{{p.mob}}" required>
+    </div>
+    <div class="col-12 ">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+        <label class="form-check-label" for="invalidCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <input type="submit" value="Update" class="btn btn-primary" >
+      <a href="" class="btn btn-danger" >Cancel</a>
+    </div>
+  </form>
+</div>
+
+  {% endblock %}  

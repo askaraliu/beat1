@@ -1,0 +1,36 @@
+
+ {% extends 'master.html'%}
+ 
+ {% block content %}   
+
+
+<h1 class="text-center mt-5">List of persons</h1>
+    
+
+
+<div class="container mt-5">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for x in p %}
+
+    <div class="col">
+      <div class="card h-100 text-center">
+        <img src="https://image.freepik.com/free-vector/contact-icons-3d_1053-96.jpg"class="card-img-top w-50 h-50 mx-auto" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{x.name}}</h5>
+          <h6 class="card-text" >{{x.eid}}</h6>
+        </div>
+        <div class="card-footer">
+          <a class="btn btn-primary d-block mx-auto" href="persondetails/{{x.id}}/">More Details</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+
+
+<a href="/">home</a>
+<a href="/page3">page3</a>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+
+{% extends 'master.html'%}
+
+{% block content %}
+
+<h6 class="p-2 text-primary">Hellow {{name}} ,{{age}} , Welcome to Home...!</h6>
+<div class="container mt-1">
+<div class="row row-cols-1 row-cols-md-3 g-2 mt-3">
+    
+    <img src="https://www.shutterstock.com/image-vector/web-development-coding-cross-platform-260nw-1128653108.jpg" alt="">
+    <img src="https://image.shutterstock.com/image-photo/womans-hand-fern-leaf-man-260nw-2190358695.jpg" alt="">
+    
+    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736881_640.jpg" alt="" height="285" width="390"  >
+    <img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg" alt="" height="285" width="390">
+    {% load static %}
+
+    <img src="{% static 'tree.jpg' %}" alt="">
+</div>
+</div>
+
+
+{% endblock %}
